@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Roselia's Palace - License</title>
+  <meta content="Roselia's Palace - License" property="og:title" />
+  <meta content="(C) Copyright 2023 Roselia's Palace - All Rights Reserved" property="og:description" />
+  <meta content="https://roselia.gay" property="og:url" />
+  <meta content="assets/roselia-pfp.png" property="og:image" />
+  <meta content="#181818" data-react-helmet="true" name="theme-color" />
+  <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+      .content {
+        background-color: #181818;
+        padding: 20px;
+        min-width: 800px;
+        max-width: 800px;
+        width: 100%;
+        margin-top: 62px;
+        border-radius: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        margin-left: auto;
+        margin-right: auto;
+      }
+  </style>
+
+</head>
+
+  <!-- Header & Nav Bar & Everything Else -->
+  <body>
+    <div class="container">
+      <div class="content-box">
+        <header>
+          <a href="/index.html"><img src="assets/logo.png" alt="Roselia's Palace" style="width: 400px;"></a>
+          <nav>
+            <a href="/index.html"><b>Home</b></a>
+            <a href="/gallery.html"><b>Gallery</b></a>
+            <a href="/blog-page-1.html"><b>Blog</b></a>
+            <a href="/chat.html"><b>Chat</b></a>
+          </nav>
+        </header>
+  
+  
+  
+        <!-- Content License -->
+        <div class="content" style="margin-top: 0px">
+          <center>
+            <h1>Roselia's Palace License</h1>
+          </center>
+        <p>(C) Copyright 2023 Roselia's Palace - All Rights Reserved</p>
+        <p>Originally written by Nova Notepad for Roselia's Palace<br>
+          "copyright holder" or "copyright holders" refers to the individual(s) or company(s) that own the copyright to the artwork that this document is referring to.
+          "author", "Author", "licensor" or "Licensor" refers to the Author of Roselia's Palace or the artwork this document is referring to.
+          "art", "Art", "artwork" or "Artwork" can refer to the Roselia's Palace artwork, or specific pieces of art which are under different copyright owners.
+          "anyone" or "Anyone" refers to any entities other than the licensor or copyrights owners.
+          This licence agreement can be changed at any time without notification of doing so.
+        <p>It is your (the User's) duty to check this page from time to time.</p>
+        <p>Anyone attempting to redistribute artwork that the author has subjected to this licence agreement should follow the below.
+          The author and/or the copyright owner(s) is the only entity holding the rights to redistribute this artwork and no other.<br>
+          Rights are defined clearly below.</p>
+        <p>The above copyright notice and this permission notice shall be included
+          in all copies or substantial portions of the Software excluding software(s) mentioned before the beginning of this agreement.</p>
+        <p>Breaking this agreement will result in legal action and/or DMCA (Digital Millenium Copyright Act) takedowns issued to your domain registrar and web host provider.</p>
+        <p>Any code pertaining to Roselia Palace's webpage(s) backends or frontends (HTML5, CSS, JS or PHP) is also subject to this licence agreement.
+          Reusing these softwares without being the author is unlawful and can/will result in legal action and/or DMCA takedowns as aforementioned.</p>
+        <p>Use of Roselia's Palace's webpages or artwork mean that you immediately agree to this license and agree to abide by it.</p>
+        <p>Artwork displayed without any license or permissions:<br>
+          Artwork which has been displayed without any discernible license or permission tags are only allowed to be uploaded by the licensor to social media, the website or any third party sources, reuploading of the content is a direct violation of this license.</p>
+        <p>Artwork commissioning:<br>
+          Artwork which has been made in commissions and is displayed on the Roselia's Palace website is subject to the license which the copyright holder(s) have set for it, meaning any consequences for using this artwork is within copyright holder(s) discretion.</p>
+        <p>Public artwork:<br>
+          Any "public artwork" is licensed under the Creative Commons "Attribution-NonCommercial-ShareAlike 4.0 International" license  (CC BY-NC-SA 4.0), the entire license can be read at the following link:</p>
+          <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">https://creativecommons.org/licenses/by-nc-sa/4.0/</a>
+      </div>
+    </div>
+
+
+
+
+  <!-- Header Scroll Script -->
+  <script>
+    // Get the header element
+    var header = document.querySelector('header');
+    // Get the content box element
+    var contentBox = document.querySelector('.content');
+
+    // Function to toggle the header visibility and adjust content box margin
+    function toggleHeaderVisibility() {
+      if (window.pageYOffset > 0) {
+        header.style.transform = 'translateY(-100%)';
+        contentBox.style.marginTop = '-42px';
+      } else {
+        header.style.transform = 'translateY(0)';
+        contentBox.style.marginTop = '62px'; /* Adjust the margin-top value as needed */
+      }
+    }
+
+    // Add a scroll event listener to the window
+    window.addEventListener('scroll', toggleHeaderVisibility);
+
+    // Initially, call the function to set the header's initial state
+    toggleHeaderVisibility();
+  </script>
+  
+  
+  
+  <!-- Footer Scroll Script -->
+  <script>
+    // Get the footer element
+    var footer = document.getElementById('footer');
+    
+    // Function to toggle the footer visibility
+    function toggleFooterVisibility() {
+      var windowHeight = window.innerHeight;
+      var scrollPosition = window.scrollY;
+      var footerHeight = footer.offsetHeight;
+      var documentHeight = document.body.scrollHeight;
+      
+      // Add a value (e.g., 100 pixels) to move the footer down
+      var additionalOffset = -440;
+      
+      // Calculate the position where the footer should start scrolling in
+      var scrollInPosition = documentHeight - windowHeight - footerHeight - additionalOffset;
+    
+      if (scrollPosition >= scrollInPosition) {
+        // Footer should be visible
+        footer.style.transform = 'translateY(0)';
+      } else {
+        // Footer should be hidden
+        footer.style.transform = 'translateY(' + footerHeight + 'px)';
+      }
+    }
+    
+    // Add a scroll event listener to the window
+    window.addEventListener('scroll', function () {
+      toggleFooterVisibility();
+    });
+    
+    // Initially, call the function to set the footer's initial state
+    toggleFooterVisibility();
+  </script>
+
+  </div>
+</body>
+</html>

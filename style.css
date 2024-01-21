@@ -1,0 +1,335 @@
+    /* Default styles for all devices */
+    body {
+      margin: 240px 0;
+      color: #fff;
+      padding: 0;
+      font-family: Verdana, "Twemoji Mozilla", "Apple Color Emoji", "Segoe UI Symbol", "Noto Color Emoji", "EmojiOne Color", "Android Emoji", sans-serif;
+      background-image: url('assets/background.png'); /* Add your image URL here */
+      background-repeat: repeat; /* Allow image repetition */
+      animation: slideBackground 30s linear infinite; /* Add slideBackground animation */
+    }
+    
+    /* Keyframes animation for sliding background */
+    @keyframes slideBackground {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: -1280px 0; /* Negative width of the image */
+      }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+      margin: 0 auto; /* Add this line to center the container */
+      max-width: 1200px; /* Adjust the max-width value as per your preference */
+    }
+
+    header {
+      text-align: center;
+      position: fixed; /* Add this line to fix the header position */
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(14, 14, 14, 0.85);
+      padding: 0;
+      box-sizing: border-box;
+      width: 100vw;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3.5vh;
+      margin: 0;
+    }
+
+    nav {
+      padding: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+      margin-top: 50px;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .content {
+      background-color: rgba(14, 14, 14, 0.95);
+      padding: 20px;
+      min-width: 800px;
+      max-width: 800px;
+      width: 100%;
+      margin-top: 62px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      margin-left: auto;
+      margin-right: auto;
+      transition: margin 0.3s ease-in-out;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background-color: rgba(14, 14, 14, 0.85);
+      padding: 10px;
+      box-sizing: border-box;
+      width: 100%;
+      transform: translateY(100%);
+      transition: transform 0.5s ease;
+      z-index: 999;
+    }
+
+    .content.dark-mode {
+      background-color: #333;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Media queries for mobile devices */
+    @media only screen and (max-width: 600px) {
+      h1 {
+        font-size: 6vh;
+      }
+
+      .content {
+        min-width: auto;
+        max-width: none;
+        padding: 10px;
+      }
+    }
+
+    /* CSS code for squircle images */
+    .content img {
+      width: 200px;
+      height: 200px;
+      border-radius: 20%;
+      object-fit: cover;
+      object-position: center;
+      cursor: pointer;
+    }
+
+    /* Styles for the pop-up box */
+    .popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%; /* Add this line to center the pop-up horizontally */
+    transform: translate(-50%, -50%);
+    animation: popupSlideIn 0.3s ease forwards, popupFadeIn 0.3s ease forwards;
+  }
+
+    /* Animation for sliding in pop-up */
+    @keyframes popupSlideIn {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    /* Animation for fading in pop-up */
+    @keyframes popupFadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Apply animations to the pop-up box */
+    .popupAnimation {
+      animation-duration: 0.3s;
+      animation-fill-mode: forwards;
+    }
+
+    .popupAnimationReverse {
+      animation-duration: 0.3s; /* Adjust the duration to match the CSS transition */
+      animation-fill-mode: forwards;
+      animation-name: popupSlideOut, popupFadeOut; /* Add the slide-out and fade-out animations */
+    }
+    
+    /* Animation for sliding out the pop-up */
+    @keyframes popupSlideOut {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+    
+    /* Animation for fading out the pop-up */
+    @keyframes popupFadeOut {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    .popup .popup-content {
+      background-color: #0F0F0F;
+      padding: 20px;
+      min-width: 400px;
+      max-width: 600px;
+      margin-top: 62px;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      position: relative;
+      transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition properties */
+    }
+
+    .popup .close {
+      color: #fff;
+      font-size: 24px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .popup #popupImageContainer {
+      margin-top: 20px;
+    }
+
+    .popup #popupImage {
+      max-width: 100%;
+      max-height: 60vh;
+      border-radius: 20px;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .popup #popupImageName {
+      margin-top: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .popup #popupImageType {
+      color: #fff;
+      font-size: 150%;
+      margin-top: 20px;
+    }
+
+    .popup #popupImageDescription {
+      color: #fff;
+      font-size: 125%;
+    }
+
+    .discord-widget {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #5865F2;
+      width: 530px;
+      padding: 10px 10px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+      margin-top: 20px;
+    }
+    
+    .user-widget {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #202225;
+      width: 530px;
+      padding: 40px 10px;
+      margin-top: -25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .discord-icon img {
+      width: 275px;
+      height: 50px;
+      border-radius: 0;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .pfp img {
+      width: 128px;
+      height: 128px;
+      border-radius: 500px;
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    
+    .username {
+      font-weight: bold;
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    
+    .user-handle {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+    
+    .bio {
+      color: #fff;
+      font-size: 18px;
+      margin: 15px 5px;
+      text-align: left;
+    }
+    
+    /* Styles for the "View Profile" button */
+    .view-profile-button {
+      background-color: #5865F2; /* Discord's darker blue color */
+      display: flex;
+      margin-top: 10px;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: Arial;
+      text-decoration: none; /* Remove underline from anchor */
+      padding: 10px 10px;
+      border-radius: 5px;
+      width: 100px;
+      transition: background-color 0.3s ease;
+    }
+    
+    /* Hover effect for the button */
+    .view-profile-button:hover {
+      background-color: #424EB5; /* Slightly darker blue on hover */
+    }

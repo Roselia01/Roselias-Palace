@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Roselia's Palace - Chat Room</title>
+  <meta content="Roselia's Palace - Chat Room" property="og:title" />
+  <meta content="Here you can chat with all the friends you make here! I know it's not much but I think it's cool ღゝ◡╹)ノ" property="og:description" />
+  <meta content="https://roselia.gay/chat" property="og:url" />
+  <meta content="assets/roselia-pfp.png" property="og:image" />
+  <meta content="#181818" data-react-helmet="true" name="theme-color" />
+  <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+
+  <style>
+    .content {
+      position: fixed;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Header & Nav Bar & Everything Else -->
+  <div class="container" style="margin-top: -300px">
+    <div class="content-box">
+      <header>
+        <a href="/index.html"><img src="assets/logo.png" alt="Roselia's Palace" style="width: 400px;"></a>
+        <nav>
+          <a href="/index.html"><b>Home</b></a>
+          <a href="/gallery.html"><b>Gallery</b></a>
+          <a href="/blog-page-1.html"><b>Blog</b></a>
+          <a href="/chat.html"><b>Chat</b></a>
+        </nav>
+      </header>
+
+
+
+      <!-- Chat Section -->
+      <div class="content">
+        <center>
+          <h1 style="color:rgb(193, 1, 37)"><u>CHAT ROOM</u></h1>
+          <h3> </h3>
+          <iframe src="https://www3.cbox.ws/box/?boxid=3531572&boxtag=AF1xjs" width="75%" height="550" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"></iframe>
+        </center>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    // Get the header element
+    var header = document.querySelector('header');
+    // Get the content box element
+    var contentBox = document.querySelector('.content');
+
+    // Function to toggle the header visibility and adjust content box margin
+    function toggleHeaderVisibility() {
+      if (window.pageYOffset > 0) {
+        header.style.transform = 'translateY(-100%)';
+        contentBox.style.marginTop = '-190px';
+      } else {
+        header.style.transform = 'translateY(0)';
+        contentBox.style.marginTop = '-55px'; /* Adjust the margin-top value as needed */
+      }
+    }
+
+    // Add a scroll event listener to the window
+    window.addEventListener('scroll', toggleHeaderVisibility);
+
+    // Initially, call the function to set the header's initial state
+    toggleHeaderVisibility();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Roselia's Palace - Blog</title>
+  <meta content="Roselia's Palace - Blog" property="og:title" />
+  <meta content="A new page has appeared!! I wonder what will show up? ღゝ◡╹)ノ" property="og:description" />
+  <meta content="https://roselia.gay" property="og:url" />
+  <meta content="assets/roselia-pfp.png" property="og:image" />
+  <meta content="#181818" data-react-helmet="true" name="theme-color" />
+  <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+</head>
+
+<body>
+
+  <!-- Header & Nav Bar & Everything Else -->
+  <div class="container">
+    <div class="content-box">
+      <header>
+        <a href="/index.html"><img src="assets/logo.png" alt="Roselia's Palace" style="width: 400px;"></a>
+        <nav>
+          <a href="/index.html"><b>Home</b></a>
+          <a href="/gallery.html"><b>Gallery</b></a>
+          <a href="/blog-page-1.html"><b>Blog</b></a>
+          <a href="/chat.html"><b>Chat</b></a>
+        </nav>
+      </header>
+
+
+
+      <!--
+      
+      <div class="content">
+          <h2>TITLE</h2>
+          <h4 style="margin-top: 5px;">TIME | DATE</h4>
+          <p style="font-size:125%"></p>
+      </div>
+      
+      -->
+
+
+
+<!-- Everything below is just blog posts! -->
+
+      <!-- Blog Post - 3:30 AM - 7/8/23 -->
+      <div class="content">
+          <h2>One Final Update...</h2>
+          <h4 style="margin-top: 5px;">10:23 PM | 11/02/2023</h4>
+          <p style="font-size:125%">I'm adding a new page. I want each blog page to max out at 10 just to keep it nice and clean. That is the update, I will be posting more, especially when I come home from Japan! I'm gonna take lots of pictures, and throw them here for all to see :3c</p>
+          
+      </div>
+
+<!-- Everything above is just blog posts! -->
+
+
+      <!-- Page Select -->
+      <div class="content">
+        <center>
+          <p style="font-size:125%">« 1 <a href="/blog-page-2.html">2</a> <a href="/blog-page-2.html">»</a></p>
+        </center>
+      </div>
+
+
+      <!-- Popup Box Creation -->
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span class="close" onclick="closePopup()"><img src="assets/close.png" style="width: 32px"></span>
+          <div id="popupImageContainer">
+            <h1 id="popupImageName" style="font-size: 2.5vh;"></h1>
+            <p id="popupImageIndicator"></p>
+            <img id="popupImage" src="" alt="Pop-up Image">
+            <p id="popupImageDescription"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer id="footer">
+        <p style="color:rgb(0, 255, 0); font-size:125%;"><b>COMMISSIONS OPEN</b></p>
+        <p style="color:white; font-size:125%;">Need a commission for art, logos or icons?<br>Email me at <a href=mailto:RoseliaSpecialCake@gmail.com>RoseliaSpecialCake@gmail.com</a><br></p>
+        <a href="/license.html" style="color:rgb(80, 80, 80);"><b>(C) Copyright 2023 Roselia's Palace - All Rights Reserved</b></a>
+      </footer>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Popup Script (I couldn't put it up top for some reason) -->
+  <script type="text/javascript" src="scripts/popup.js"></script>
+
+
+
+  <!-- Header Scroll Script -->
+  <script>
+    // Get the header element
+    var header = document.querySelector('header');
+    // Get the content box element
+    var contentBox = document.querySelector('.content');
+
+    // Function to toggle the header visibility and adjust content box margin
+    function toggleHeaderVisibility() {
+      if (window.pageYOffset > 0) {
+        header.style.transform = 'translateY(-100%)';
+        contentBox.style.marginTop = '-42px';
+      } else {
+        header.style.transform = 'translateY(0)';
+        contentBox.style.marginTop = '62px'; /* Adjust the margin-top value as needed */
+      }
+    }
+
+    // Add a scroll event listener to the window
+    window.addEventListener('scroll', toggleHeaderVisibility);
+
+    // Initially, call the function to set the header's initial state
+    toggleHeaderVisibility();
+  </script>
+  
+  
+  
+  <!-- Footer Scroll Script -->
+  <script>
+    // Get the footer element
+    var footer = document.getElementById('footer');
+    
+    // Function to toggle the footer visibility
+    function toggleFooterVisibility() {
+      var windowHeight = window.innerHeight;
+      var scrollPosition = window.scrollY;
+      var footerHeight = footer.offsetHeight;
+      var documentHeight = document.body.scrollHeight;
+      
+      // Add a value (e.g., 100 pixels) to move the footer down
+      var additionalOffset = -650;
+      
+      // Calculate the position where the footer should start scrolling in
+      var scrollInPosition = documentHeight - windowHeight - footerHeight - additionalOffset;
+    
+      if (scrollPosition >= scrollInPosition) {
+        // Footer should be visible
+        footer.style.transform = 'translateY(0)';
+      } else {
+        // Footer should be hidden
+        footer.style.transform = 'translateY(' + footerHeight + 'px)';
+      }
+    }
+    
+    // Add a scroll event listener to the window
+    window.addEventListener('scroll', function () {
+      toggleFooterVisibility();
+    });
+    
+    // Initially, call the function to set the footer's initial state
+    toggleFooterVisibility();
+  </script>
+
+</body>
+</html>
