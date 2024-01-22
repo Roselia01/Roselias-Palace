@@ -84,6 +84,61 @@
       transition: margin 0.3s ease-in-out;
     }
 
+    .advert {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+  
+    .advert-widget {
+      background-color: rgba(14, 14, 14, 0.85);
+      padding: 20px;
+      min-width: 300px;
+      max-width: 300px;
+      left: 745px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+      position: relative; /* Make it relative for positioning the close button */
+    }
+  
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+  
+    /* Adjust the style of the close button */
+    .close img {
+      width: 16px;
+    }
+    
+    /* Styles for the "View Profile" button */
+    .view-patreon-button {
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      margin-top: 10px;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      font-family: Arial;
+      text-decoration: none;
+      padding: 10px 10px;
+      border-radius: 5px;
+      width: 100px;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect for the button */
+    .view-patreon-button:hover {
+      background-color: #FFFFFF;
+      color:rgba(0, 0, 0, 0.85);
+    }
+
     footer {
       position: fixed;
       bottom: 0;

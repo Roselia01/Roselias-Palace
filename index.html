@@ -128,7 +128,7 @@
               <a class="view-profile-button" href="https://discord.com/users/233212184199561226" target="_blank">View
                 Profile</a>
               <div class="bio">
-                🕔 EST (UTC-5) | 🎂 22y/o (22際) ღゝ◡╹)ノ💕<br>
+                🕘 JST (UTC+9) | 🎂 22y/o (22際) ღゝ◡╹)ノ💕<br>
                 Hello! I'm Roselia! I'm the PRETTIEST™ Kitty!<br>
                 <br>
                 こんにちは！ 私はロゼリアです！<br>
@@ -157,15 +157,21 @@
 
 
 
-    <!-- Advert -->
-    <div id="advert" class="advert">
-      <div class="content">
-        <h1>Hewp :3</h1>
-        <p>im gay uwu</p>
-      </div>
-    </div>
+        <!-- Advert -->
+        <div id="advert" class="advert">
+          <div class="advert-widget">
+            <span class="close" onclick="closeAdvert()"><img src="assets/close.png" style="width: 16px; cursor: pointer; bottom: 20px"></span>
+            <center>
+            <h2>Support Me!</h2>
+            </center>
+            <p style="font-size:105%">Running a website is difficult and costs a lot of money! Your donation would mean a lot and keep this site alive! ❤</p>
+            <center>
+            <a class="view-patreon-button" href="https://www.patreon.com/roseliacommissions" target="_blank">Visit Patreon</a>
+            </center>
+          </div>
+        </div>
 
-    
+
 
     <!-- Footer -->
     <footer id="footer">
@@ -211,40 +217,63 @@
     toggleHeaderVisibility();
   </script>
 
-  <!-- Footer Scroll Script -->
+  <!-- Footer and Advert Scroll Script -->
   <script>
-    // Get the footer element
+    // Get the footer and advert widget elements
     var footer = document.getElementById('footer');
-
-    // Function to toggle the footer visibility
+    var advertWidget = document.querySelector('.advert-widget');
+  
+    // Function to toggle the footer visibility and adjust the advert widget
     function toggleFooterVisibility() {
       var windowHeight = window.innerHeight;
       var scrollPosition = window.scrollY;
       var footerHeight = footer.offsetHeight;
       var documentHeight = document.body.scrollHeight;
-
+  
       // Add a value (e.g., 100 pixels) to move the footer down
       var additionalOffset = -640;
-
+  
       // Calculate the position where the footer should start scrolling in
       var scrollInPosition = documentHeight - windowHeight - footerHeight - additionalOffset;
-
+  
       if (scrollPosition >= scrollInPosition) {
         // Footer should be visible
         footer.style.transform = 'translateY(0)';
+        // Adjust the advert widget position with animation
+        advertWidget.style.transition = 'bottom 0.5s ease';
+        advertWidget.style.bottom = (footerHeight + 20) + 'px';
       } else {
         // Footer should be hidden
         footer.style.transform = 'translateY(' + footerHeight + 'px)';
+        // Reset the advert widget position with animation
+        advertWidget.style.transition = 'bottom 0.5s ease';
+        advertWidget.style.bottom = '20px';
       }
     }
-
+  
     // Add a scroll event listener to the window
     window.addEventListener('scroll', function () {
       toggleFooterVisibility();
     });
-
+  
     // Initially, call the function to set the footer's initial state
     toggleFooterVisibility();
+
+    // Close the advert widget
+    function closeAdvert() {
+    var advert = document.getElementById('advert');
+    var advertContent = document.querySelector('.advert-widget');
+    var scrollDistance = window.innerHeight;
+
+    // Apply scroll and fade-out animation
+    advertContent.style.opacity = '0';
+
+    // Wait for the animation to complete before hiding the pop-up
+    setTimeout(function() {
+      advert.style.display = 'none';
+      advertContent.style.opacity = '1';
+    }, 500); // Adjust the duration (in milliseconds) to control the fading speed
+  }
   </script>
 
 </body>
