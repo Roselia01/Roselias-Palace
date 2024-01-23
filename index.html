@@ -14,13 +14,15 @@
   <link rel="stylesheet" href="style.css?v=1">
   <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <style>
       .advert {
       position: fixed;
-      bottom: 20px;
-      left: 50%;
+      margin-bottom: 1px;
+      margin-left: 350px;
+      bottom: 0;
       transform: translateX(-50%);
       z-index: 1000;
     }
@@ -35,6 +37,7 @@
       border-radius: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
       position: relative; /* Make it relative for positioning the close button */
+      transition: right 0.5s ease;
     }
   
     .close {
@@ -331,6 +334,31 @@
       advertContent.style.opacity = '1';
     }, 500); // Adjust the duration (in milliseconds) to control the fading speed
   }
+  </script>
+
+
+
+  <!-- Advert Offscreen Script -->
+  <script>
+    // Function to update the .advert-widget position based on window size
+    function updatePosition() {
+      var advertWidget = document.querySelector('.advert-widget');
+      var windowWidth = window.innerWidth;
+  
+      // Calculate left position based on window width
+      var leftPosition = Math.max(windowWidth - 425); // Adjust as needed
+  
+      // Set the new left position
+      advertWidget.style.left = (leftPosition / 2) + 'px';
+    }
+  
+    // Add a resize event listener to update position when the window is resized
+    window.addEventListener('resize', function () {
+      updatePosition();
+    });
+  
+    // Initially, call the function to set the .advert-widget's initial position
+    updatePosition();
   </script>
 
 </body>
